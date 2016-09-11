@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var express = require('express');
+var config = require('config').server;
+var app = express();
+var http = require('http').Server(app);
+
+app.use('/', require('serve-static')(require('path').resolve(__dirname, '../client')));
+
+http.listen(config.port, function () {
+  console.log('Server listening at port %d', config.port);
+});
