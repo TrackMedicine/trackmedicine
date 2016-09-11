@@ -6,5 +6,8 @@ module.exports = {
 	},
 	mqtt: {
 		credential: read.sync('config/.env', 'utf8')
+	},
+	ws: {
+		port: 4000
 	}
 };

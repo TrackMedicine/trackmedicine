@@ -3,12 +3,19 @@ var client = '../client'
 var path = require('path')
 var app = require('express')()
 var static = require('serve-static')
-var mqtt = require('config').mqtt
+var credential = require('config').mqtt.credential
+var port = require('config').ws.port
 var config = require('config').server
 var http = require('http').Server(app)
 
-app.use('/', static(path.resolve(__dirname, client)));
+app.use('/', static(path.resolve(__dirname, client)))
 
 http.listen(config.port, function () {
-  console.log('Server listening at port %d', config.port);
+  console.log('Server listening at port %d', config.port)
 });
+
+require('../server/ws').mqtt_connection(credential);
+require('../server/ws').ws_start(port);
+
+
+
