@@ -2,9 +2,9 @@ var read = require('read-file')
 
 module.exports = {
 	server: {
-    	port: process.env.PORT || 3000
+		port: process.env.PORT || 3000
 	},
 	mqtt: {
-		credential: read.sync('.env', 'utf8')
+		credential: read.sync('config/.env', 'utf8')
 	}
 };
