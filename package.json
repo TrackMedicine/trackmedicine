@@ -1,0 +1,22 @@
+{
+  "name": "trackmedicine",
+  "version": "1.0.0",
+  "description": "Track Medicine project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desireesantos/trackmedicine.git"
+  },
+  "keywords": [
+    "iot"
+  ],
+  "author": "Desiree Santos - desireesantos.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desireesantos/trackmedicine/issues"
+  },
+  "homepage": "https://github.com/desireesantos/trackmedicine#readme"
+}
