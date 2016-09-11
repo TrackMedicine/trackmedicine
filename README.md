@@ -1,6 +1,6 @@
 # trackmedicine
 
-Track Medicine is Internet Of Things(IoT) to track medicine temperature during the travel and display them on dashboard.  
+Track Medicine is Internet Of Things(IoT) project to track medicine temperature during the travel and display them on dashboard.  
 
 
 
