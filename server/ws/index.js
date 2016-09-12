@@ -12,7 +12,7 @@ exports.mqtt_connection = function (credential,http, port){
 
 	io = require('socket.io').listen(http, require('config').server);
 	io.sockets.on('connection', function (socket) {
-    	io.sockets.emit('mqtt', 'Iniciando');
+    	io.sockets.emit('mqtt', '');
 	});
 
 	mqttclient.on('message', function(topic, message) {
