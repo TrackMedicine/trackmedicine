@@ -1,7 +1,7 @@
 var io
 var mqttclient
 
-exports.mqtt_connection = function (credential,http, port){
+exports.mqtt = function (credential,http){
 	mqttclient = require('mqtt').connect(credential)
 	topic = 'temperature'
 
@@ -19,4 +19,9 @@ exports.mqtt_connection = function (credential,http, port){
     	io.sockets.emit('mqtt', message.toString());
 	});
 	//End
+}
+
+exports.mongodb = function(uri) {
+	var db = require('mongoose').connect(uri);
+	db.on('error', console.error.bind(console, 'connection error:'));	
 }

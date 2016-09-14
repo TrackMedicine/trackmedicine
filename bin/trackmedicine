@@ -7,6 +7,7 @@ var static = require('serve-static')
 var credential = require('config').mqtt.credential
 var config = require('config').server
 var http = require('http').Server(app)
+var connection = require('../server/connection')
 
 app.use('/', static(path.resolve(__dirname, client)))
 
@@ -15,7 +16,8 @@ http.listen(config.port, function () {
 });
 
 //TODO:Create test, extract logic
-require('../server/ws').mqtt_connection(credential, http, config.port);
+connection.mqtt(credential, http);
+connection.mongodb(config.mongodb.uri)
 
 
 
