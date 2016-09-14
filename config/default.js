@@ -1,6 +1,6 @@
 var read = require('read-file')
-var file_mqtt = 'config/.mqtt_env'
-var file_mongo = 'config/.mongoose_env'
+var file_mqtt = 'config/mqtt_env'
+var file_mongo = 'config/mongoose_env'
 
 module.exports = {
 	server: {

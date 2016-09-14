@@ -22,6 +22,5 @@ exports.mqtt = function (credential,http){
 }
 
 exports.mongodb = function(uri) {
-	var db = require('mongoose').connect(uri);
-	db.on('error', console.error.bind(console, 'connection error:'));	
+	require('mongoose').connect(uri);
 }

@@ -6,6 +6,7 @@ var app = require('express')()
 var static = require('serve-static')
 var credential = require('config').mqtt.credential
 var config = require('config').server
+var mongo = require('config').mongodb
 var http = require('http').Server(app)
 var connection = require('../server/connection')
 
@@ -17,7 +18,7 @@ http.listen(config.port, function () {
 
 //TODO:Create test, extract logic
 connection.mqtt(credential, http);
-connection.mongodb(config.mongodb.uri)
+connection.mongodb(mongo.uri)
 
 
 
