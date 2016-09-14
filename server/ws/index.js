@@ -15,7 +15,7 @@ exports.mqtt_connection = function (credential,http, port){
 		io.sockets.emit('mqtt', '');
 	});
 
-	mqttclient.on('message', function(topic, message) {
+	mqttclient.on('message', function(topic,message) {
     	io.sockets.emit('mqtt', message.toString());
 	});
 	//End
