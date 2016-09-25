@@ -1,3 +1,4 @@
 node_modules/
-config/.env
+config/mongoose_env
+config/mqtt_env
 config/runtime.json

@@ -12,12 +12,16 @@ var connection = require('../server/connection')
 
 app.use('/', static(path.resolve(__dirname, client)))
 
-http.listen(config.port, function () {
+http.listen(config.port, () => {
   console.log('Server listening at port %d', config.port)
-});
+})
 
-//TODO:Create test, extract logic
-connection.mqtt(credential, http);
+mqtt = connection.mqtt(credential)
+connection.subscribe(mqtt)
+
+socket = connection.socket(http)
+connection.emit_start(socket)
+
 connection.mongodb(mongo.uri)
 
 
