@@ -1,7 +1,8 @@
 let socket = require('socket.io')
 let mqtt = require('mqtt')
+let mongoose =require('mongoose')
 let configserver = require('config').server
-const TEMPERATURE = 'temperature'
+const EVENTS = 'events'
 const EMIT_NAME = 'mqtt'
 
 
@@ -14,15 +15,16 @@ exports.mqtt = credential => {
  	return mqttclient
 }
 
-exports.subscribe = (mqttclient, topic = TEMPERATURE) => {
+exports.subscribe = (mqttclient, topic = EVENTS) => {
  	mqttclient.on('connect', () => {
  		mqttclient.subscribe(topic)
   })
 }
 
-exports.read_msg = (mqttclient, io, topic, msg) => {
-	mqttclient.on('message', topic, msg => {
-    	io.sockets.emit(topic, msg.toString())
+//TODO: Extract to object => mqttclient, io, topic, msg
+exports.read_msg = (mqttclient, io) => {
+	mqttclient.on('message', (EVENTS, msg) => {
+    	io.sockets.emit(EVENTS, msg.toString())
 	})
 }
 
@@ -34,12 +36,12 @@ exports.socket = (http) => {
 	return io
 }
 
-exports.emit_start = (io, name = EMIT_NAME) => {
+exports.emit_start = (io) => {
 	io.sockets.on('connection', socket => {
-		socket.emit(name, '')
+		socket.emit(EMIT_NAME, '')
 	})
 }
 
-exports.mongodb = uri => {
-	require('mongoose').connect(uri)
+exports.mongoose = uri => {
+	mongoose.connect(uri)
 }
