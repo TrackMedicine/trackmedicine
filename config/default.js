@@ -9,7 +9,7 @@ module.exports = {
 	mqtt: {
 		credential: process.env.CLOUDMQTT_URL || read.sync(file_mqtt, 'utf8')
 	},
-	mongodb: {
+	mongo: {
 		uri: process.env.PROD_MONGODB || read.sync(file_mongo, 'utf8')
 	}
 };
