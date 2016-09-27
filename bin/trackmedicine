@@ -16,14 +16,12 @@ http.listen(config.port, () => {
   console.log('Server listening at port %d', config.port)
 })
 
-mqtt = connection.mqtt(credential)
-connection.subscribe(mqtt)
+let mqtt = connection.mqtt(credential)
+let socket = connection.socket(http)
 
-socket = connection.socket(http)
+connection.subscribe(mqtt)
 connection.emit_start(socket)
 connection.read_msg(mqtt,socket)
-
-
 connection.mongoose(mongo.uri)
 
 
