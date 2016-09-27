@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-var client = '../client'
-var path = require('path')
-var app = require('express')()
-var static = require('serve-static')
-var credential = require('config').mqtt.credential
-var config = require('config').server
-var mongo = require('config').mongodb
-var http = require('http').Server(app)
-var connection = require('../server/connection')
+let client = '../client'
+let path = require('path')
+let app = require('express')()
+let serve_static = require('serve-static')
+let credential = require('config').mqtt.credential
+let config = require('config').server
+let mongo = require('config').mongo
+let http = require('http').Server(app)
+let connection = require('../server/connection')
 
-app.use('/', static(path.resolve(__dirname, client)))
+app.use('/', serve_static(path.resolve(__dirname, client)))
 
 http.listen(config.port, () => {
   console.log('Server listening at port %d', config.port)
@@ -21,8 +21,10 @@ connection.subscribe(mqtt)
 
 socket = connection.socket(http)
 connection.emit_start(socket)
+connection.read_msg(mqtt,socket)
 
-connection.mongodb(mongo.uri)
+
+connection.mongoose(mongo.uri)
 
 
 
