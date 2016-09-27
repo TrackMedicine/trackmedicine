@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+'use strict';
 
 let client = '../client'
 let path = require('path')

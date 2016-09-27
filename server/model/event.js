@@ -1,3 +1,5 @@
+'use strict';
+
 class Event {
 	constructor(eventName, data) {
 		this.name = eventName
