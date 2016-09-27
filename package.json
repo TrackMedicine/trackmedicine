@@ -43,5 +43,7 @@
       "es2015"
     ]
   },
-  "modules.root": "/path/to/es6/modules"
+  "engines": {
+  "node": "6.1.0"
+}
 }
