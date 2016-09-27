@@ -3,6 +3,7 @@ let mqtt = require('mqtt')
 let mongoose =require('mongoose')
 let configserver = require('config').server
 const EVENTS = 'events'
+const MQTT = 'mqtt'
 const EMIT_NAME = 'mqtt'
 
 
@@ -23,8 +24,8 @@ exports.subscribe = (mqttclient, topic = EVENTS) => {
 
 //TODO: Extract to object => mqttclient, io, topic, msg
 exports.read_msg = (mqttclient, io) => {
-	mqttclient.on('message', (EVENTS, msg) => {
-    	io.sockets.emit(EVENTS, msg.toString())
+	mqttclient.on('message', (topic, msg) => {
+    	io.sockets.emit(MQTT, msg.toString())
 	})
 }
 
@@ -38,6 +39,7 @@ exports.socket = (http) => {
 
 exports.emit_start = (io) => {
 	io.sockets.on('connection', socket => {
+		console.log('Started emit')
 		socket.emit(EMIT_NAME, '')
 	})
 }
