@@ -1,7 +1,7 @@
 'use strict';
 
-let assert = require ('assert')
-let Event = require ('../../../server/model/event')
+let assert = require('assert')
+let Event = require('../../../server/model/event')
 
 
 describe('Event', () => {
