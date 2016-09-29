@@ -4,7 +4,7 @@ var EventsController = require('../../../server/controller/events_controller')
 
 describe('Events', () => {
 
-    it('has only one event', () => {
+    it('has only one event', function() {
      	
      	const event = new Event('event type', {})
      	let events = new EventsController()
