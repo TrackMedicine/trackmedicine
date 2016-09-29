@@ -1,8 +1,6 @@
-'use strict';
-
-let assert = require('chai').('assert')
-let Event = require('../../../server/model/event')
-let EventsController = require('../../../server/controller/events_controller')
+var  assert = require('chai').('assert')
+var Event = require('../../../server/model/event')
+var EventsController = require('../../../server/controller/events_controller')
 
 describe('Events', () => {
 
