@@ -3,10 +3,9 @@
 let assert = require('chai').assert
 let Event = require('../../../server/model/event')
 
-
 describe('Event', function() {
 
-  it('holds the given data', () => {
+  it('holds the given data', function() {
   	const name = 'event type'
   	const data = {some: 'data', here: 'too'}
 

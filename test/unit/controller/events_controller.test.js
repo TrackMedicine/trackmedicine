@@ -2,7 +2,7 @@ var  assert = require('chai').assert
 var Event = require('../../../server/model/event')
 var EventsController = require('../../../server/controller/events_controller')
 
-describe('Events', () => {
+describe('Events', function() {
 
     it('has only one event', function() {
      	
