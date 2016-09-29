@@ -1,4 +1,4 @@
-[![Build Status](https://snap-ci.com/snap-ci-examples/TrackMedicine/trackmedicine/branch/master/build_image)](https://snap-ci.com/TrackMedicine/trackmedicine/branch/master)
+[![Build Status](https://snap-ci.com/TrackMedicine/trackmedicine/branch/master/build_image)](https://snap-ci.com/TrackMedicine/trackmedicine/branch/master)
 
 # Track Medicine
 
