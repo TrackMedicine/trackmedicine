@@ -1,4 +1,4 @@
-var  assert = require('chai').('assert')
+var  assert = require('chai').'assert'
 var Event = require('../../../server/model/event')
 var EventsController = require('../../../server/controller/events_controller')
 
