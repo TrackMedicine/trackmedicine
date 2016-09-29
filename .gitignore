@@ -2,3 +2,4 @@ node_modules/
 config/mongoose_env
 config/mqtt_env
 config/runtime.json
+.DS_Store
