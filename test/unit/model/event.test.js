@@ -1,7 +1,7 @@
 'use strict';
 
-let assert = require('chai').assert
-let Event = require('../../../server/model/event')
+var assert = require('chai').assert
+var Event = require('../../../server/model/event')
 
 describe('Event', function() {
 
@@ -9,7 +9,7 @@ describe('Event', function() {
   	const name = 'event type'
   	const data = {some: 'data', here: 'too'}
 
-  	let event = new Event(name, data)
+  	var event = new Event(name, data)
 
   	assert.deepEqual(event.name, 'event type')
   	assert.deepEqual(event.data, {some: 'data', here: 'too'})
