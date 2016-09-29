@@ -1,6 +1,6 @@
 'use strict';
 
-let assert = require('chai').assert
+let assert = require('chai').('assert')
 let Event = require('../../../server/model/event')
 let EventsController = require('../../../server/controller/events_controller')
 
