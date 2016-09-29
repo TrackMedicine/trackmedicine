@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 let Event = require('../model/event')
 
