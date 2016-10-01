@@ -14,6 +14,8 @@ class Events {
 		this.events.push(newEvent)
 		return this.events
 	}
+
+	
 }
 
 module.exports = Events;

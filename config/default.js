@@ -3,6 +3,7 @@
 let read = require('read-file')
 let file_mqtt = 'config/mqtt_env'
 let file_mongo = 'config/mongoose_env'
+let app = require('express')()
 
 module.exports = {
 	server: {
@@ -13,5 +14,8 @@ module.exports = {
 	},
 	mongo: {
 		uri: process.env.PROD_MONGODB || read.sync(file_mongo, 'utf8')
+	},
+	express:{
+		app: app
 	}
 };
